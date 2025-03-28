@@ -48,7 +48,7 @@ You can install Postman via this website: https://www.postman.com/downloads/
     (You might want to use `cargo check` if you only need to verify your work without running the app.)
 
 ## Mandatory Checklists (Publisher)
--   [ ] Clone https://gitlab.com/ichlaffterlalu/bambangshop to a new repository.
+-   [v] Clone https://gitlab.com/ichlaffterlalu/bambangshop to a new repository.
 -   **STAGE 1: Implement models and repositories**
     -   [v] Commit: `Create Subscriber model struct.`
     -   [v] Commit: `Create Notification model struct.`
@@ -56,7 +56,7 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [v] Commit: `Implement add function in Subscriber repository.`
     -   [v] Commit: `Implement list_all function in Subscriber repository.`
     -   [v] Commit: `Implement delete function in Subscriber repository.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
+    -   [v] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
     -   [ ] Commit: `Create Notification service struct skeleton.`
     -   [ ] Commit: `Implement subscribe function in Notification service.`
@@ -77,6 +77,14 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. Do I still need a trait for Subscriber?
+    for this project, a single model struct is enough because im not dealing ith multiple behaviours from the subscriber struct. 
+
+2. Is Vec enough or should I use DashMap?
+    Vec is enough because the subscriber struct is not dealing with multiple behaviours but it requires additional logic for the uniqueness problem. but dashmap is necessary and may be better because i need unique subscribers indentifier because of the 'url'.
+
+3. Do I need DashMap or can I use Singleton?
+    dashmap, because i need it for concurrent access and thread safety. implementing this project with a singleton would need more work put into because of the manual sync
 
 #### Reflection Publisher-2
 
