@@ -87,5 +87,15 @@ This is the place for you to write reflections:
     dashmap, because i need it for concurrent access and thread safety. implementing this project with a singleton would need more work put into because of the manual sync
 
 #### Reflection Publisher-2
+1. Why separate “Service” and “Repository” from a Model?
+    In MVC, separating the "Service" and "Repository" layers from the Model is about adhering to the Single Responsibility Principle. The Model should focus on representing data, while the Repository handles data access, and the Service encapsulates business logic. This separation improves modularity, reusability, and testability. It keeps the Model focused on what it represents, allowing easier changes to business logic or data storage without affecting the core model.
 
+2. What happens if i only use the Model?
+    If i only use the Model, the code can become monolithic and harder to maintain. The Model would need to handle both data persistence and business logic, leading to tight coupling. This would increase complexity and make it difficult to scale or modify parts of the system (like switching databases or changing business rules) without affecting everything else.
+
+3. Interactions between Models (Program, Subscriber, Notification)
+    If interactions between the Program, Subscriber, and Notification models are handled solely in one place, the complexity increases. Each model would need to know about the others, leading to poor separation of concerns. For example, changes in the logic of one model (like modifying how a notification is sent) could impact the entire codebase. By separating them into services and repositories, each model can evolve independently, reducing code complexity and improving maintainability.
+
+4. How Postman helps in testing
+    I’ve explored Postman, and it helps a lot in testing API requests. With Postman, I can easily send HTTP requests (GET, POST, PUT, DELETE) and check responses. It allows me to test my RESTful APIs by setting up different endpoints, request bodies, and headers.
 #### Reflection Publisher-3
