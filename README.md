@@ -68,7 +68,7 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [v] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [v] Commit: `Implement notify function in Notification service to notify each Subscriber.`
     -   [v] Commit: `Implement publish function in Program service and Program controller.`
-    -   [ ] Commit: `Edit Product service methods to call notify after create/delete.`
+    -   [v] Commit: `Edit Product service methods to call notify after create/delete.`
     -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
