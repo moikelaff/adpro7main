@@ -69,7 +69,7 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [v] Commit: `Implement notify function in Notification service to notify each Subscriber.`
     -   [v] Commit: `Implement publish function in Program service and Program controller.`
     -   [v] Commit: `Edit Product service methods to call notify after create/delete.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
+    -   [v] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -99,3 +99,21 @@ This is the place for you to write reflections:
 4. How Postman helps in testing
     I’ve explored Postman, and it helps a lot in testing API requests. With Postman, I can easily send HTTP requests (GET, POST, PUT, DELETE) and check responses. It allows me to test my RESTful APIs by setting up different endpoints, request bodies, and headers.
 #### Reflection Publisher-3
+1. Which variation of Observer Pattern is used in this tutorial case?
+    In this tutorial case, i am using the Push model of the Observer Pattern. The publisher (NotificationService) pushes data (the notification) to the subscribers via HTTP requests.
+
+2.  Advantages and disadvantages of using the other variation (Pull model)?
+    If i used the Pull model, the subscribers would need to actively request notifications from the publisher.
+
+    Advantages of Pull model:
+    - Less load on the publisher: The publisher only sends notifications when subscribers request them.
+
+    - More control for subscribers: Subscribers can decide when they want to receive updates.
+
+    Disadvantages of Pull model:
+    - Increased complexity: Subscribers need to constantly poll for updates, which could be inefficient and lead to unnecessary resource usage.
+
+    - Delayed notifications: Since subscribers have to pull the data, there may be a delay in receiving updates.
+
+3. What will happen if i decide to not use multi-threading in the notification process?
+    the notification process would become sequential. This means that the program would send notifications one by one to each subscriber, which could significantly slow down the system if there are many subscribers. The application might become unresponsive or take longer to complete the process, especially under heavy load, as each notification is processed in turn rather than concurrently.
